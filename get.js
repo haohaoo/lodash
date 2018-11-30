@@ -4,6 +4,7 @@ import baseGet from './.internal/baseGet.js'
  * Gets the value at `path` of `object`. If the resolved value is
  * `undefined`, the `defaultValue` is returned in its place.
  *
+ * 根据对象路径获取值。 如果解析 value 是 undefined 会以 defaultValue 取代。
  * @since 3.7.0
  * @category Object
  * @param {Object} object The object to query.

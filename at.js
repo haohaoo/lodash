@@ -2,7 +2,8 @@ import baseAt from './.internal/baseAt.js'
 
 /**
  * Creates an array of values corresponding to `paths` of `object`.
- *
+ * 根据 object 的路径获取值为数组。
+ * 
  * @since 1.0.0
  * @category Object
  * @param {Object} object The object to iterate over.

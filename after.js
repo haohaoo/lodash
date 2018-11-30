@@ -34,16 +34,3 @@ function after(n, func) {
 }
 
 export default after
-
-// mine before
-function mineBefore(n, func) {
-  if (typeof func == 'function') {
-    throw new TypeError('Expected a function')
-  }
-  let hasCalc = 0
-  return function(...args) {
-    if (++hasCalc < n) {
-      return func.apply(this, args)
-    }
-  }
-}
