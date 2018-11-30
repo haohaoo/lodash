@@ -17,6 +17,9 @@ import getTag from './.internal/getTag.js'
  */
 function isSymbol(value) {
   const type = typeof value
+  // direct judgement 'symbol'
+  // or
+  // 'object' && '!=null' && MORE TYPE JUDGEMENT
   return type == 'symbol' || (type == 'object' && value != null && getTag(value) == '[object Symbol]')
 }
 

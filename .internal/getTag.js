@@ -1,6 +1,18 @@
 import baseGetTag from './baseGetTag.js'
 
 /** `Object#toString` result references. */
+// 对象 toString 结果参考
+/**
+ * Object.prototype.toString.call('foo');     // "[object String]"
+  Object.prototype.toString.call([1, 2]);    // "[object Array]"
+  Object.prototype.toString.call(3);         // "[object Number]"
+  Object.prototype.toString.call(true);      // "[object Boolean]"
+  Object.prototype.toString.call(undefined); // "[object Undefined]"
+  Object.prototype.toString.call(null);      // "[object Null]"
+  Object.prototype.toString.call(new Map());       // "[object Map]"
+  Object.prototype.toString.call(function* () {}); // "[object GeneratorFunction]"
+  Object.prototype.toString.call(Promise.resolve()); // "[object Promise]"
+ */
 const dataViewTag = '[object DataView]'
 const mapTag = '[object Map]'
 const objectTag = '[object Object]'
@@ -9,6 +21,7 @@ const setTag = '[object Set]'
 const weakMapTag = '[object WeakMap]'
 
 /** Used to detect maps, sets, and weakmaps. */
+// 使用于检测 maps, sets, weakmaps
 const dataViewCtorString = `${DataView}`
 const mapCtorString = `${Map}`
 const promiseCtorString = `${Promise}`
