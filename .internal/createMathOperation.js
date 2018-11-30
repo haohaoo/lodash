@@ -37,7 +37,7 @@ function createMathOperation(operator, defaultValue) {
     if (other !== undefined && value === undefined) {
       return other
     }
-    // 
+    // conversition to same type
     if (typeof value == 'string' || typeof other == 'string') {
       value = baseToString(value)
       other = baseToString(other)
@@ -46,6 +46,7 @@ function createMathOperation(operator, defaultValue) {
       value = baseToNumber(value)
       other = baseToNumber(other)
     }
+    // implement operator
     return operator(value, other)
   }
 }

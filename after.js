@@ -1,7 +1,8 @@
 /**
  * The opposite of `before`. This method creates a function that invokes
  * `func` once it's called `n` or more times.
- *
+ * 与　before　相反, 当调用一次或 n 次后执行 func
+ * 
  * @since 0.1.0
  * @category Function
  * @param {number} n The number of calls before `func` is invoked.
@@ -17,13 +18,32 @@
  */
 function after(n, func) {
   if (typeof func != 'function') {
+    // new TypeError([message[, fileName[, lineNumber]]])
     throw new TypeError('Expected a function')
   }
   return function(...args) {
+    // Deconstruction all of the arguments
+    // if n > 1, return empty func
+    // after calculate, n store in cache
     if (--n < 1) {
+      // if n < 1 excute func
       return func.apply(this, args)
+      // bind this, transfer arguments
     }
   }
 }
 
 export default after
+
+// mine before
+function mineBefore(n, func) {
+  if (typeof func == 'function') {
+    throw new TypeError('Expected a function')
+  }
+  let hasCalc = 0
+  return function(...args) {
+    if (++hasCalc < n) {
+      return func.apply(this, args)
+    }
+  }
+}

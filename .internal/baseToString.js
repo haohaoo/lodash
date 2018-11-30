@@ -27,7 +27,9 @@ function baseToString(value) {
   if (isSymbol(value)) {
     return symbolToString ? symbolToString.call(value) : ''
   }
+  // SKILL: `${value}` instead of value.toString()
   const result = `${value}`
+  // judge '0' and -Infinity
   return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result
 }
 
