@@ -28,3 +28,18 @@ function compact(array) {
 }
 
 export default compact
+
+function mineCompact(array) {
+	if (!array == null) {
+		return array
+	}
+	let index = -1
+	const result = []
+	for (let value of array) {
+    if (value) {
+      // why not Array.push()
+      result[++index] = value
+    }
+  }
+	return result
+}

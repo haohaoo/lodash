@@ -34,7 +34,7 @@ function chunk(array, size) {
   const result = new Array(Math.ceil(length / size))
 
   while (index < length) {
-    // 切割源数组，
+    // 切割源数组
     result[resIndex++] = slice(array, index, (index += size))
   }
   return result

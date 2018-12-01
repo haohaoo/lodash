@@ -37,14 +37,18 @@ function slice(array, start, end) {
   if (end < 0) {
     end += length
   }
-  // ??? 为什么要右移一位
+  // 使用位运算右移0位，运算符永远都会返回正整数，因为此时的 end - start 必定为正，所以为向下取整。保证当用户输入为小数时得到的计算结果为整数
   length = start > end ? 0 : ((end - start) >>> 0)
-  // ???
+  // 2.5 >>> 0  => 2
+  // js 进行位运算会得到带符号位的32位的补码
+  // 所以会抛弃后面32位（小数点位）的数据
   start >>>= 0
 
   let index = -1
+  // 创建期望长度的数组
   const result = new Array(length)
   while (++index < length) {
+    // 从 start 位开始切割保存
     result[index] = array[index + start]
   }
   return result

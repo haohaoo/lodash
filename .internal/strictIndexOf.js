@@ -1,7 +1,7 @@
 /**
  * A specialized version of `indexOf` which performs strict equality
  * comparisons of values, i.e. `===`.
- *
+ * 使用严格等于的 indexOf 查找
  * @private
  * @param {Array} array The array to inspect.
  * @param {*} value The value to search for.

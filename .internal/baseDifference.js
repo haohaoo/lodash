@@ -12,18 +12,21 @@ const LARGE_ARRAY_SIZE = 200
  * for excluding multiple arrays.
  *
  * @private
- * @param {Array} array The array to inspect.
- * @param {Array} values The values to exclude.
- * @param {Function} [iteratee] The iteratee invoked per element.
- * @param {Function} [comparator] The comparator invoked per element.
- * @returns {Array} Returns the new array of filtered values.
+ * @param {Array} array The array to inspect. 目标数组
+ * @param {Array} values The values to exclude. 要排除的值
+ * @param {Function} [iteratee] The iteratee invoked per element. 每个元素的过滤器
+ * @param {Function} [comparator] The comparator invoked per element.每个元素调用的比较器。
+ * @returns {Array} Returns the new array of filtered values. 返回过滤后的新数组
  */
 function baseDifference(array, values, iteratee, comparator) {
+  // arrayIncludes 用于检测是否包含值
   let includes = arrayIncludes
   let isCommon = true
   const result = []
+  // 获取对比样本长度
   const valuesLength = values.length
 
+  // 空校验
   if (!array.length) {
     return result
   }
